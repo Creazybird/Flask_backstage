@@ -1,0 +1,3 @@
+1. pandas 报错：'numpy.ndarray' object is not callable
+
+   一般来说，TypeError: 'numpy.ndarray' object is not callable的意思是你希望通过dataframe的类对象的方法得到numpy数组。
