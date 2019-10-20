@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 from flask import Flask, jsonify, abort, render_template
 from werkzeug.utils import redirect
-
 app = Flask(__name__)
 
 
@@ -10,13 +9,13 @@ def init():
     return 'hello world'
 
 
-@app.route('/test')
+@app.route('/api/test')
 def test():
     return 'This is a test'
 
 
 # 使用jsonify,生成json数据响应体
-@app.route('/response')
+@app.route('/api/response')
 def demo():
     # 返回给前端的数据，设计成json数据格式
     # python中是字典数据类型
@@ -28,13 +27,13 @@ def demo():
 
 
 # 生成文本响应体 ,感觉用不到，网页的跳转还是交给vue 前端来做
-@app.route('/response2')
+@app.route('/api/response2')
 def demo2():
     return redirect('http://www.baidu.com')
 
 
 # 生成状态码
-@app.route('/response3')
+@app.route('/api/response3')
 def demo3():
     return '状态码', 200
 
@@ -45,7 +44,7 @@ def demo3():
 
 # 2.errorhandler  异常捕获  用来监听捕获异常，返回自定义的页面处理
 
-@app.route('/game/<int:age>')
+@app.route('/api/game/<int:age>')
 def play_game(age):
     abort(404)
     return 'helloworld'
@@ -97,7 +96,7 @@ def teardown_request_1(e):  # 视图函数的名字可以随便取 e代表错误
     print(e)
 
 # 尝试写人生中第一个接口
-@app.route('/gets')
+@app.route('/api/gets')
 def api_get():
     data={
         'name':'guanzhong',
