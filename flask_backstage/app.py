@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from flask import Flask, jsonify, abort, render_template
 from werkzeug.utils import redirect
 
