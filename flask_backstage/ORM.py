@@ -1,5 +1,5 @@
-# 链接操作数据库
-# -#- coding:utf-8 -*-
+# -*- coding: UTF-8 -*-
+# 链接数据库
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
