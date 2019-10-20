@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/add" method="post">
+    {#设置隐藏的csrf_token,使用了CSRFProtect保护app之后,即可使用csrf_token()方法#}
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+    <label>用户名:</label> <input type="text" name="username"><br>
+    <label>密码:</label> <input type="text" name="username"><br>
+    <input type="submit" value="登陆">
+</form>
+</body>
+</html>
